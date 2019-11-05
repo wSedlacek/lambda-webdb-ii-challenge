@@ -2,12 +2,28 @@
   "name": "node-db2-challenge",
   "version": "1.0.0",
   "description": "Node DB 2 Module Challenge",
-  "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "dev": "ts-node-dev src/index.ts",
+    "knex:migrate:make": "knex -x ts migrate:make",
+    "knex:migrate:latest": "knex migrate:latest",
+    "knex:migrate:rollback": "knex migrate:rollback",
+    "knex:seed:make": "knex -x ts seed:make",
+    "knex:seed:run": "knex seed:run"
   },
-  "author": "Lambda School",
+  "dependencies": {
+    "@types/helmet": "^0.0.45",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "3.21.2",
+    "knex": "^0.20.1",
+    "sqlite3": "^4.1.0"
+  },
   "devDependencies": {
-    "nodemon": "^1.19.2"
+    "@types/express": "^4.17.1",
+    "@types/node": "^12.11.7",
+    "@types/sqlite3": "^3.1.5",
+    "ts-node": "^8.4.1",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "typescript": "^3.6.4"
   }
 }
